@@ -3,7 +3,6 @@ import os
 import sys
 import funcs
 import signal
-import time
 
 def add():
     name = ''

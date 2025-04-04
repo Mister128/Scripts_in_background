@@ -118,13 +118,13 @@ return: r
 while True:
     to_do = input("What to do?: ")
 
-    if to_do == 'a':
+    if to_do == 'add':
         add()
-    elif to_do == 'd':
+    elif to_do == 'del':
         delete()
     elif to_do == 'l':
         launch()
-    elif to_do == 'g':
+    elif to_do == 'get':
         for name in funcs.get_scripts():
             print(name)
     elif to_do == 'c':

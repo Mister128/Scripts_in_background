@@ -42,7 +42,8 @@ def get_script(name):
     script = [item for row in script for item in row]
     conn.close()
     return script
-
+ 
+ 
 def get_pid_by_process_path(process_path):
         """ Функция для поиска PID процесса по его командной строке. :param command_line: Командная строка процесса. :return: PID процесса или None, если процесс не найден. """
         for proc in psutil.process_iter(['cmdline']):
@@ -55,13 +56,12 @@ def get_pid_by_process_path(process_path):
 
 def get_start_by(path):
     extension = os.path.splitext(path)[1]
-    print(extension)
     program_map = {
         '.exe': 'start',
         '.dll': 'start',
         '.msi': 'start',
-        '.bat': 'cmd',
-        '.cmd': 'cmd',
+        '.bat': 'start',
+        '.cmd': 'start',
         '.ps1': 'powershell',
         '.vbs': 'cscript',
         '.jar': 'java -jar',
@@ -82,7 +82,6 @@ def get_start_by(path):
     }
     
     program = program_map.get(extension)
-    print(program)
     return program
     
     

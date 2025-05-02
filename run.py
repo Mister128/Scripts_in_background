@@ -91,7 +91,7 @@ def close():
     if script[2] == None:
         activate = 'python'
     else:
-        activate = os.path.join(script[2], 'Scripts', 'python.exe')
+        activate = os.path.join(script[2])
 
     script_path = script[1]
     pid = funcs.get_pid_by_process_path(f"{activate} {script_path}")
